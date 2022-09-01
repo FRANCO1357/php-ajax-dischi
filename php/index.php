@@ -1,6 +1,6 @@
 <?php
 
-include '../api/disc/index.php';
+include '../includes/database.php';
 
 ?>
 
