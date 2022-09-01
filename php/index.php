@@ -1,8 +1,6 @@
 <?php
 
-include 'data.php';
-
-echo $discs;
+include '../api/disc/index.php';
 
 ?>
 
