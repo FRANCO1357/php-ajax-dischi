@@ -15,9 +15,16 @@
 </head>
 <body>
 
-    <div id="root"></div>
-
-    <h1>ciao</h1>
+    <div id="root">
+        <h1>Dischi</h1>
+        <ul v-for="disc in discs">
+            <li>{{disc.title}}</li>
+            <li>{{disc.author}}</li>
+            <li>{{disc.year}}</li>
+            <li><img :src="disc.poster" alt=""></li>
+            <li>{{disc.genre}}</li>
+        </ul>
+    </div>
     
     <!-- js -->
     <script src="script.js"></script>
