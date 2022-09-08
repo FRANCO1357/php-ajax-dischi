@@ -15,14 +15,25 @@ include '../includes/database.php';
 </head>
 <body>
 
-    <h1>Dischi</h1>
-    <?php foreach($discs as $key => $disc) : ?>
-        <h3><?php echo $disc['title'] ?></h3>
-        <p><?php echo $disc['author'] ?></p>
-        <p><?php echo $disc['year'] ?></p>
-        <img src="<?php echo $disc['poster'] ?>" alt="<?php echo $disc['title'] ?>">
-        <p><?php echo $disc['genre'] ?></p>
-    <?php endforeach ?>
+    <header>
+        <img src="../assets/img/spotify_logo.png" alt="">
+        <div class="search">
+            <input type="text">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <?php foreach($discs as $key => $disc) : ?>
+                <div class="card">
+                    <h3><?php echo $disc['title'] ?></h3>
+                    <p><?php echo $disc['author'] ?></p>
+                    <p><?php echo $disc['year'] ?></p>
+                    <img src="<?php echo $disc['poster'] ?>" alt="<?php echo $disc['title'] ?>">
+                    <p><?php echo $disc['genre'] ?></p>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </main>
     
 </body>
 </html>
