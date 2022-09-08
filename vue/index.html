@@ -19,7 +19,13 @@
         <header>
             <img src="../assets/img/spotify_logo.png" alt="">
             <div class="search">
-                <input type="text">
+                <select v-model="genre" @change="fetchDiscs">
+                    <option value="">Tutti i generi</option>
+                    <option>Rock</option>
+                    <option>Pop</option>
+                    <option>Jazz</option>
+                    <option>Metal</option>
+                </select>
             </div>
         </header>
         <main>

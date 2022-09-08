@@ -5,12 +5,16 @@ const app = new Vue({
     el:  '#root',
     data: {
         discs: [],
-        search: '',
         genre: '',
     },
+    methods:{
+        fetchDiscs(){
+            axios.get(`../api/disc?genre=${this.genre}`).then(res => {
+                this.discs = res.data;
+            })
+        }     
+    },
     mounted(){
-        axios.get('../api/disc/index.php').then(res => {
-            this.discs = res.data;
-        })
+        this.fetchDiscs();
     }
-})
+}) 

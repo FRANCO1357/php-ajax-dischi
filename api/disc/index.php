@@ -2,19 +2,17 @@
 
 include '../../includes/database.php';
 
-    $results = $discs;
+$results = $discs;
 
-    $search = $_GET['search'] ?? '';
+$genre = $_GET['genre'] ?? '';
 
-    if($search){
-        $results = [];
-        foreach($discs as $disc){
-            $title = strtolower($disc['title']);
-            $searched_term = strtolower($search);
-            if(strpos($title, $searched_term) !== false) $results[] = $disc;
-        }
+
+if($genre){
+    $results = [];
+    foreach($discs as $disc){
+        if($disc['genre'] === $genre) $results[] = $disc;
     }
-
-    header('Content-Type: application/json');
-
-    echo json_encode($results); 
+}
+ 
+header('Content-Type: application/json');
+echo json_encode($results); 
